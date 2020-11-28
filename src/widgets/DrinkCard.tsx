@@ -2,12 +2,9 @@ import { create, tsx } from '@dojo/framework/core/vdom';
 import Avatar from '@dojo/widgets/avatar';
 import Card from '@dojo/widgets/card';
 import Label from '@dojo/widgets/label';
-
-// import Link from '@dojo/framework/routing/Link';
-import { ActiveLink } from '@dojo/framework/routing/ActiveLink';
+import Link from '@dojo/framework/routing/Link';
 
 import { Drink } from '../interfaces';
-
 import * as css from './styles/DrinkCard.m.css';
 
 const factory = create().properties<Drink>();
@@ -30,15 +27,14 @@ export default factory(function DrinkCard({ properties }) {
 						</div>
 					),
 					actionButtons: (
-						<ActiveLink
-							activeClasses={['link-active']}
+						<Link
 							to="drink"
 							params={{
 								id: `${String(id)}`,
 							}}
 						>
 							Add
-						</ActiveLink>
+						</Link>
 					),
 				}}
 			</Card>

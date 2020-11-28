@@ -23,14 +23,11 @@ const factory = create({ icache, store }).properties<Drink>();
 
 export default factory(function DrinkPage({
 	middleware: { icache, store },
-	properties,
+	properties
 }) {
 	const drink = properties();
-
 	const { name = 'Coffee', price, imageUrl: image } = drink;
-
 	const currentPrice = icache.getOrSet('currentPrice', price);
-
 	const add = store.executor(addToCart);
 
 	return (

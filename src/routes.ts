@@ -14,10 +14,5 @@ export default [
 		id: 'drink',
 		path: '/drink/{id}',
 		outlet: 'main',
-	},
-	// {
-	// 	id: 'cart',
-	// 	path: '/cart',
-	// 	outlet: 'cart'
-	// }
+	}
 ];

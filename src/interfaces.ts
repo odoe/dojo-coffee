@@ -1,8 +1,3 @@
-export interface Order {
-	drinks: Drink[];
-	total: number;
-}
-
 export interface Drink {
 	id: number;
 	name: string;
