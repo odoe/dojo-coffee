@@ -1,4 +1,10 @@
-# dojo-pwa
+# dojo-coffee-house-pwa
+
+This is a demo application showing how to use Dojo to build a Progressive Web Application.
+
+You can see a live demo [here](https://dojo-coffee-house-pwa.netlify.app/).
+
+---
 
 This project was generated with the [Dojo CLI](https://github.com/dojo/cli) & [Dojo CLI create app command](https://github.com/dojo/cli-create-app).
 
