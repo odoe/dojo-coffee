@@ -1,0 +1,38 @@
+[
+    {
+        "id": 401,
+        "name": "Cafe Latte",
+        "price": 4.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "id": 402,
+        "name": "Mocha",
+        "price": 5.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "id": 403,
+        "name": "Coffee",
+        "price": 2.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "id": 404,
+        "name": "Espresso",
+        "price": 2.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "id": 405,
+        "name": "Americano",
+        "price": 3.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "id": 406,
+        "name": "Cappuccino",
+        "price": 5.50,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    }
+]

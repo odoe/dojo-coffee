@@ -1,0 +1,39 @@
+{
+  "extends": "./.dojorc",
+  "build-app": {
+    "pwa": {
+      "manifest": {
+        "name": "The Brew House",
+        "short_name": "Brew House",
+        "description": "Where Coffee Brews",
+        "background_color": "#ffffff",
+        "theme_color": "#00704A",
+        "icons": [
+          {
+            "src": "assets/coffee.png",
+            "sizes": [
+              128,
+              256,
+              512
+            ]
+          }
+        ]
+      },
+      "serviceWorker": {
+        "clientsClaim": true,
+        "routes": [
+          {
+            "urlPattern": ".*",
+            "strategy": "networkFirst",
+            "expiration": {
+              "maxEntries": 25
+            }
+          }
+        ]
+      }
+    }
+  },
+  "test-intern": {},
+  "create-app": {},
+  "create-widget": {}
+}
