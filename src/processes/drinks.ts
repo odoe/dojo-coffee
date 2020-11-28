@@ -1,4 +1,7 @@
-import { createProcess, createCommandFactory } from '@dojo/framework/stores/process';
+import {
+	createProcess,
+	createCommandFactory,
+} from '@dojo/framework/stores/process';
 
 import { Drink, State } from '../interfaces';
 
@@ -10,14 +13,17 @@ type DrinkJSON = Pick<Drink, 'id' | 'name' | 'price' | 'imageUrl'>;
 
 // fetch list of drinks
 const fetchDrinksCommand = commandFactory(async ({ state }) => {
-    const response = await fetch('/assets/data.json');
-    const data: DrinkJSON[]  = await response.json();
-    const drinks: Drink[] = data.map((x: any) => ({ ...x, addins: [], toppings: [], flavors: [], size: 'small'}))
-    state.drinks = [... drinks];
+	const response = await fetch('/assets/data.json');
+	const data: DrinkJSON[] = await response.json();
+	const drinks: Drink[] = data.map((x) => ({
+		...x,
+		addins: [],
+		toppings: [],
+		flavors: [],
+		size: 'small',
+	}));
+	state.drinks = [...drinks];
 });
 
 // Processes
-export const fetchDrinks = createProcess(
-    'fetch-drinks',
-    [fetchDrinksCommand]
-);
+export const fetchDrinks = createProcess('fetch-drinks', [fetchDrinksCommand]);

@@ -9,5 +9,5 @@ const registry = new Registry();
 registerRouterInjector(routes, registry);
 
 const r = renderer(() => <App />);
-const domNode = document.getElementById("root");
+const domNode = document.getElementById('root');
 r.mount({ domNode, registry });

@@ -1,25 +1,25 @@
 export interface Order {
-    drinks: Drink[];
-    total: number;
+	drinks: Drink[];
+	total: number;
 }
 
 export interface Drink {
-    id: number;
-    name: string;
-    price: number;
-    addins: AddIn[];
-    toppings: Toppings[];
-    flavors: Flavor[];
-    size: Size;
-    imageUrl: string;
+	id: number;
+	name: string;
+	price: number;
+	addins: AddIn[];
+	toppings: Toppings[];
+	flavors: Flavor[];
+	size: Size;
+	imageUrl: string;
 }
 
 export interface State {
-    drinks: Drink[];
+	drinks: Drink[];
 }
 
 export interface Cart extends State {
-    total: number;
+	total: number;
 }
 
 export type AddIn = 'milk' | 'sugar' | 'stevia' | 'honey';

@@ -21,7 +21,7 @@ describe('App', () => {
 					{{
 						home: <Home />,
 						about: <About />,
-						profile: <Profile username="Dojo User" />
+						profile: <Profile username="Dojo User" />,
 					}}
 				</Outlet>
 			</div>

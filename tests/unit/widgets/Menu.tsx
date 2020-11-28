@@ -17,17 +17,29 @@ describe('Menu', () => {
 						title: 'My Dojo App!',
 						actions: (
 							<virtual>
-								<Link to="home" classes={[css.link]} activeClasses={[css.selected]}>
+								<Link
+									to="home"
+									classes={[css.link]}
+									activeClasses={[css.selected]}
+								>
 									Home
 								</Link>
-								<Link to="about" classes={[css.link]} activeClasses={[css.selected]}>
+								<Link
+									to="about"
+									classes={[css.link]}
+									activeClasses={[css.selected]}
+								>
 									About
 								</Link>
-								<Link to="profile" classes={[css.link]} activeClasses={[css.selected]}>
+								<Link
+									to="profile"
+									classes={[css.link]}
+									activeClasses={[css.selected]}
+								>
 									Profile
 								</Link>
 							</virtual>
-						)
+						),
 					}}
 				</Header>
 			</div>

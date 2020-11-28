@@ -8,7 +8,8 @@
 		"test": "dojo test",
 		"test:unit": "dojo build --mode unit && dojo test --unit --config local",
 		"test:functional": "dojo build --mode functional && dojo test --functional --config local",
-		"test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local"
+		"test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
+		"lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
 	},
 	"dependencies": {
 		"@dojo/framework": "~7.0.0",
@@ -22,6 +23,30 @@
 		"@dojo/cli-build-app": "~7.0.0",
 		"@dojo/cli-test-intern": "~7.0.0",
 		"@types/node": "~9.6.5",
+		"@typescript-eslint/eslint-plugin": "^4.8.2",
+		"@typescript-eslint/parser": "^4.8.2",
+		"eslint": "^7.14.0",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"prettier": "^2.2.1",
 		"typescript": "~3.4.5"
+	},
+	"eslintConfig": {
+		"parser": "@typescript-eslint/parser",
+		"plugins": [
+			"@typescript-eslint"
+		],
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/eslint-recommended",
+			"plugin:@typescript-eslint/recommended",
+			"prettier/@typescript-eslint",
+			"plugin:prettier/recommended"
+		]
+	},
+	"prettier": {
+		"singleQuote": true,
+		"tabWidth": 4,
+		"useTabs": true
 	}
 }

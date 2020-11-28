@@ -8,7 +8,9 @@ import * as css from '../../../src/widgets/styles/About.m.css';
 describe('About', () => {
 	it('default renders correctly', () => {
 		const r = renderer(() => <About />);
-		const baseAssertion = assertion(() => <h1 classes={[css.root]}>About Page</h1>);
+		const baseAssertion = assertion(() => (
+			<h1 classes={[css.root]}>About Page</h1>
+		));
 		r.expect(baseAssertion);
 	});
 });

@@ -16,7 +16,6 @@ import DrinkList from './widgets/DrinkList';
 import DrinkPage from './widgets/DrinkPage';
 import Home from './widgets/Home';
 
-
 import { fetchDrinks } from './processes/drinks';
 
 const factory = create({ icache, store, theme });
@@ -46,30 +45,32 @@ export default factory(function App({ middleware: { icache, store, theme } }) {
 							<Link to="menu">Menu</Link>
 						</div>,
 						<div classes={[css.items]}>
-							<a href="#" onclick={(e) => {
-								e.preventDefault();
-								icache.set('open', (open) => !open);
-							}}>Cart</a>
-						</div>
-					]
+							<a
+								href="#"
+								onclick={(e) => {
+									e.preventDefault();
+									icache.set('open', (open) => !open);
+								}}
+							>
+								Cart
+							</a>
+						</div>,
+					],
 				}}
 			</Header>
-			<Outlet
-				id="main"
-			>
+			<Outlet id="main">
 				{{
 					home: <Home />,
-					menu: <DrinkList drinks={drinks}/>,
+					menu: <DrinkList drinks={drinks} />,
 					drink: ({ params: { id } }) => {
 						if (!drinks) {
-							return  <div>No drinks found</div>
+							return <div>No drinks found</div>;
 						}
-						const drink = drinks.find(x => x.id === Number(id));
+						const drink = drinks.find((x) => x.id === Number(id));
 						if (drink) {
-							return <DrinkPage {...drink} />
-						}
-						else {
-							return  <div>No drink found</div>
+							return <DrinkPage {...drink} />;
+						} else {
+							return <div>No drink found</div>;
 						}
 					},
 				}}
