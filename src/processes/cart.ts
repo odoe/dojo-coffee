@@ -10,9 +10,10 @@ const commandFactory = createCommandFactory<Cart>();
 // generate ids for drink orders
 const genId = () => Math.floor((1 + Math.random()) * 0x10000);
 
+// ---------------------
 // Commands
+// ---------------------
 
-// fetch current cart
 const initCartCommand = commandFactory(async ({ state }) => {
 	state.drinks = [];
 	state.total = 0;
@@ -34,7 +35,10 @@ const removeFromCartCommand = commandFactory<Drink>(
 	}
 );
 
+// ---------------------
 // Processes
+// ---------------------
+
 export const initCart = createProcess('init-cart', [initCartCommand]);
 
 export const addToCart = createProcess('add-to-cart', [addToCartCommand]);

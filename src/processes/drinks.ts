@@ -9,7 +9,9 @@ const commandFactory = createCommandFactory<State>();
 
 type DrinkJSON = Pick<Drink, 'id' | 'name' | 'price' | 'imageUrl'>;
 
+// ---------------------
 // Commands
+// ---------------------
 
 // fetch list of drinks
 const fetchDrinksCommand = commandFactory(async ({ state }) => {
@@ -25,5 +27,8 @@ const fetchDrinksCommand = commandFactory(async ({ state }) => {
 	state.drinks = [...drinks];
 });
 
+// ---------------------
 // Processes
+// ---------------------
+
 export const fetchDrinks = createProcess('fetch-drinks', [fetchDrinksCommand]);
