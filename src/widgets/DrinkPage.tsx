@@ -20,7 +20,7 @@ const factory = create({ icache, injector, store }).properties<Drink>();
 
 export default factory(function DrinkPage({
 	middleware: { icache, injector, store },
-	properties
+	properties,
 }) {
 	const router = injector.get<Router>('router');
 	const drink = properties();

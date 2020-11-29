@@ -14,5 +14,5 @@ export default [
 		id: 'drink',
 		path: '/drink/{id}',
 		outlet: 'main',
-	}
+	},
 ];
