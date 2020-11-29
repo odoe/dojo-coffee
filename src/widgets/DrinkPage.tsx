@@ -1,6 +1,6 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
 import { icache } from '@dojo/framework/core/middleware/icache';
-import Router from '@dojo/framework/routing/Router';
+import { injector } from '@dojo/framework/core/middleware/injector';
 
 import Button from '@dojo/widgets/button';
 import Card from '@dojo/widgets/card';
@@ -13,18 +13,16 @@ import { addToCart } from '../processes/cart';
 
 import { Drink } from '../interfaces';
 
-import routes from '../routes';
-
 import * as css from './styles/DrinkPage.m.css';
+import Router from '@dojo/framework/routing/Router';
 
-const router = new Router(routes);
-
-const factory = create({ icache, store }).properties<Drink>();
+const factory = create({ icache, injector, store }).properties<Drink>();
 
 export default factory(function DrinkPage({
-	middleware: { icache, store },
+	middleware: { icache, injector, store },
 	properties
 }) {
+	const router = injector.get('router') as Router;
 	const drink = properties();
 	const { name = 'Coffee', price, imageUrl: image } = drink;
 	const currentPrice = icache.getOrSet('currentPrice', price);
