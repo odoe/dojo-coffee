@@ -22,7 +22,7 @@ export default factory(function DrinkPage({
 	middleware: { icache, injector, store },
 	properties
 }) {
-	const router = injector.get('router') as Router;
+	const router = injector.get<Router>('router');
 	const drink = properties();
 	const { name = 'Coffee', price, imageUrl: image } = drink;
 	const currentPrice = icache.getOrSet('currentPrice', price);
@@ -201,7 +201,9 @@ export default factory(function DrinkPage({
 						flavors,
 					};
 					add(userDrink);
-					router.setPath('menu');
+					if (router) {
+						router.setPath('menu');
+					}
 				}}
 			>
 				Add to Cart
